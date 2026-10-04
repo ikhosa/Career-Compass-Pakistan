@@ -21,8 +21,8 @@ inject_css()
 
 # Streamlit Secrets are promoted to an environment variable so config.py stays
 # framework-neutral and the agents can be tested outside Streamlit later.
-if "XAI_API_KEY" in st.secrets:
-    os.environ["XAI_API_KEY"] = str(st.secrets["XAI_API_KEY"])
+if "GROK_API_KEY" in st.secrets:
+    os.environ["GROK_API_KEY"] = str(st.secrets["GROK_API_KEY"])
 
 
 def init_state() -> None:
@@ -143,7 +143,7 @@ render_header()
 
 if st.session_state.error:
     st.error(st.session_state.error)
-    st.caption("Check that XAI_API_KEY is present in Streamlit Secrets and that the deployment has internet access to the xAI API.")
+    st.caption("Check that GROK_API_KEY is present in Streamlit Secrets and that the deployment has internet access to the GROK API.")
     if st.button("Reset assessment"):
         reset_app()
     st.stop()
