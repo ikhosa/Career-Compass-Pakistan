@@ -6,11 +6,11 @@ from typing import Optional
 from crewai import LLM
 
 
-MODEL_NAME = "xai/grok-4.7"
+MODEL_NAME = "openai/gpt-oss-120b"
 
 
 def get_api_key() -> Optional[str]:
-    key = os.getenv("XAI_API_KEY", "").strip()
+    key = os.getenv("GROQ_API_KEY", "").strip()
     return key or None
 
 
@@ -18,7 +18,7 @@ def require_api_key() -> str:
     key = get_api_key()
     if not key:
         raise RuntimeError(
-            "XAI_API_KEY is not configured. Add it to Streamlit Secrets before running the app."
+            "GROQ_API_KEY is not configured. Add it to Streamlit Secrets before running the app."
         )
     return key
 
