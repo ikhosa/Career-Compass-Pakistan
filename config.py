@@ -6,7 +6,7 @@ from typing import Optional
 from crewai import LLM
 
 
-MODEL_NAME = "openai/gpt-oss-120b"
+MODEL_NAME = "groq/openai/gpt-oss-120b"
 
 
 def get_api_key() -> Optional[str]:
